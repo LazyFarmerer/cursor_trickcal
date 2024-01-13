@@ -100,24 +100,28 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.instance.PlaySfx(AudioManager.Sfx.GameStart);
         yield return new WaitForSeconds(1.5f);
-        NextStage();
+        NextStage(0.0f);
     }
 
-    public void NextStage()
+    public void NextStage(float time)
     {
+        if (gameState == GameState.Playing)
+            return;
+
         stage++;
-        uIManager._nextStageWaitWindow.SetActive(false);
         gameState = GameState.Playing;
-        StartCoroutine(StageCount());
+        StartCoroutine(StageCount(time));
     }
 
     /// <summary>
     /// 3... 2... 1... start!
     /// </summary>
     /// <returns></returns>
-    IEnumerator StageCount()
+    IEnumerator StageCount(float time)
     {
+        yield return new WaitForSeconds(time);
         AudioManager.instance.StopBGM();
+        uIManager._nextStageWaitWindow.SetActive(false);
         // 스테이지 표시
         uIManager.StageCount(stage);
 
@@ -135,7 +139,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         uIManager.StageWaitTimeCount(0);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.CountFinal);
-        AudioManager.instance.PlaySfx(AudioManager.Sfx.Exclamation);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.BattleStartExclamation);
         yield return new WaitForSeconds(1.0f);
         uIManager.StageWaitTimeCountSetActive(false);
         // 스폰 시작
@@ -239,11 +243,13 @@ public class GameManager : MonoBehaviour
         uIManager.StageWaitTimeCountSetActive(true);
         uIManager.StageClear();
 
-        AudioManager.instance.PlaySfx(AudioManager.Sfx.Exclamation);
-        yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.BattleEndExclamation);
+        yield return new WaitForSeconds(2.5f);
         uIManager.StageWaitTimeCountSetActive(false);
         uIManager._nextStageWaitWindow.SetActive(true);
+        // uIManager.nextStageWaitWindowButtons.ButtonsSetActive(true);
 
+        AudioManager.instance.StopAllSfx();
         AudioManager.instance.PlayBGM(AudioManager.BGM.Bakery);
     }
 
@@ -273,6 +279,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void DamageLevelUp()
     {
+        if (gameState == GameState.Playing)
+            return;
+
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
         damageLevel++;
     }
     /// <summary>
@@ -280,6 +290,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void CriticalChanceLevelUp()
     {
+        if (gameState == GameState.Playing)
+            return;
+
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
         criticalChanceLevel++;
     }
     /// <summary>
@@ -287,14 +301,26 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void CriticalDamageLevelUp()
     {
+        if (gameState == GameState.Playing)
+            return;
+
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
         criticalDamageLevel++;
     }
     public void HpUp(int hp)
     {
+        if (gameState == GameState.Playing)
+            return;
+
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
         player.transform.GetChild(0).GetComponent<MouseCursor>().Heal(hp, 0);
     }
     public void MaxHpUp(int maxHp)
     {
+        if (gameState == GameState.Playing)
+            return;
+
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
         player.transform.GetChild(0).GetComponent<MouseCursor>().Heal(0, maxHp);
     }
 }

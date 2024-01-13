@@ -6,6 +6,8 @@ public class ShowCharacterChoice : MonoBehaviour
 {
     [SerializeField]
     GameObject characterWindow;
+    [SerializeField]
+    GameObject clickBlockPannel;
 
     void Start()
     {
@@ -19,6 +21,9 @@ public class ShowCharacterChoice : MonoBehaviour
             );
             character.GetComponent<Button>().onClick.AddListener(() =>
                 GameManager.instance.uIEvent.CharacterChoice2InGame()
+            );
+            character.GetComponent<Button>().onClick.AddListener(() =>
+                clickBlockPannel.SetActive(true)
             );
             character.GetChild(0).GetComponent<Image>().sprite = mouseCursorDatas[index].sprite;
             character.GetChild(1).GetComponent<TextMeshProUGUI>().text = mouseCursorDatas[index].Name;

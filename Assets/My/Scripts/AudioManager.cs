@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
     [Header("# BGM")]
     [SerializeField] AudioClip[] bgmClips;
     AudioSource bgmPlayer;
+    // 너무 커서 조금 보정
+    float editedBgmVolume = 0.8f;
 
     [Header("# SFX")]
     [SerializeField] AudioClip[] sfxClips;
@@ -32,11 +34,13 @@ public class AudioManager : MonoBehaviour
         /// <summary>
         /// 환호 와-아-
         /// </summary>
-        Exclamation,
+        BattleStartExclamation,
         /// <summary>
         /// 사도 선택하고 게임 시작
         /// </summary>
-        GameStart
+        BattleEndExclamation,
+        GameStart,
+        buy
     }
 
 
@@ -54,7 +58,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetVolume(float bgmVolume, float sfxVolume)
     {
-        bgmPlayer.volume = bgmVolume;
+        bgmPlayer.volume = bgmVolume * editedBgmVolume;
         for (int index=0; index < sfxPlayers.Length; index++) {
             sfxPlayers[index].volume = sfxVolume;
         }
@@ -68,7 +72,7 @@ public class AudioManager : MonoBehaviour
         bgmPlayer = bgmObject.AddComponent<AudioSource>();
         bgmPlayer.playOnAwake = true;
         bgmPlayer.loop = true;
-        bgmPlayer.volume = GameManager.instance.data.bgmVolume.Get();
+        bgmPlayer.volume = GameManager.instance.data.bgmVolume.Get() * editedBgmVolume;
         // bgmPlayer.clip = bgmClip;
         // bgmEffect = Camera.main.GetComponent<AudioHighPassFilter>();
 
@@ -111,6 +115,12 @@ public class AudioManager : MonoBehaviour
             sfxPlayers[loopIndex].clip = sfxClips[(int)sfx];
             sfxPlayers[loopIndex].Play();
             break;
+        }
+    }
+    public void StopAllSfx()
+    {
+        for (int index=0; index < sfxPlayers.Length; index++) {
+            sfxPlayers[index].Stop();
         }
     }
 }

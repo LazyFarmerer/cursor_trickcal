@@ -8,10 +8,10 @@ public class UpgradeButtons : MonoBehaviour
     [SerializeField] TextMeshProUGUI coinCount;
 
     string[] description = new string[4] {
-        "최대체력 + 1\n(최대 10개)\n레벨: {0}",
-        "공격력 + 1\n레벨: {0}",
-        "치명타 확률 + 1\n레벨: {0}",
-        "치명타 공격력 + 1\n레벨: {0}"
+        "최대체력 증가\n(최대 10개)\n레벨: {0}",
+        "공격력 증가\n레벨: {0}",
+        "치명타 확률 증가\n레벨: {0}",
+        "치명타 공격력 증가\n레벨: {0}"
     };
     [SerializeField] GameObject[] buttons = new GameObject[4];
     TextMeshProUGUI[] descriptionText = new TextMeshProUGUI[4];
@@ -114,6 +114,7 @@ public class UpgradeButtons : MonoBehaviour
         }
 
         coinCount.text = coin.ToString("n0");
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
         GameManager.instance.data.coin.Save(coin);
 
         // 마지막으로 캐릭 선택 창 새로고침

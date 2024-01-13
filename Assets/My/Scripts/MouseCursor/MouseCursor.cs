@@ -170,6 +170,7 @@ public class MouseCursor : MonoBehaviour
     {
         this.hp += hp;
         this.maxHp += maxHp;
+        this.maxHp = Mathf.Min(this.maxHp, mouseCursorData.maxHp);
         if (this.maxHp < this.hp) {
             this.hp = this.maxHp;
         }

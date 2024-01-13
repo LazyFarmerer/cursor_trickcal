@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
 
     [Header("스테이지 클리어 후 나오는 창 UI")]
     public GameObject _nextStageWaitWindow;
+    // public NextStageWaitWindow nextStageWaitWindowButtons;
 
     [Header("게임 일시정지 시 나오는 창 UI")]
     public GameObject _gamePauseWindow;
@@ -57,6 +58,7 @@ public class UIManager : MonoBehaviour
     {
         coin = _coin.GetComponent<RectTransform>();
         coinCount = _coin.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        // nextStageWaitWindowButtons = _nextStageWaitWindow.GetComponent<NextStageWaitWindow>();
 
         stageCount = _stageCount.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         scoreCount = _scoreCount.transform.GetChild(1).GetComponent<TextMeshProUGUI>();

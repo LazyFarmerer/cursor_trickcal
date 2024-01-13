@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class NextStageWaitWindow : MonoBehaviour
 {
@@ -10,25 +11,34 @@ public class NextStageWaitWindow : MonoBehaviour
     TextMeshProUGUI damage;
     TextMeshProUGUI criticalChance;
     TextMeshProUGUI criticalDamage;
+    Button[] NextStageButtons = new Button[6];
 
     void Awake()
     {
+        NextStageButtons[0] = transform.GetChild(1).GetComponent<Button>();
+
         Transform statsUPObject = transform.GetChild(0);
 
         Transform hpObject = statsUPObject.GetChild(0);
         hp = hpObject.GetChild(1).GetComponent<TextMeshProUGUI>();
+        NextStageButtons[1] = hpObject.GetComponent<Button>();
 
         Transform maxHpObject = statsUPObject.GetChild(1);
         maxHp = maxHpObject.GetChild(1).GetComponent<TextMeshProUGUI>();
+        NextStageButtons[2] = hpObject.GetComponent<Button>();
 
         Transform damageObject = statsUPObject.GetChild(2);
         damage = damageObject.GetChild(1).GetComponent<TextMeshProUGUI>();
+        NextStageButtons[3] = hpObject.GetComponent<Button>();
 
         Transform criticalChanceObject = statsUPObject.GetChild(3);
         criticalChance = criticalChanceObject.GetChild(1).GetComponent<TextMeshProUGUI>();
+        NextStageButtons[4] = hpObject.GetComponent<Button>();
 
         Transform criticalDamageObject = statsUPObject.GetChild(4);
         criticalDamage = criticalDamageObject.GetChild(1).GetComponent<TextMeshProUGUI>();
+        NextStageButtons[5] = hpObject.GetComponent<Button>();
+
     }
 
     void OnEnable()
@@ -58,5 +68,15 @@ public class NextStageWaitWindow : MonoBehaviour
             mouseCursorData.levelAdjustedCriticalDamage * 100,
             mouseCursorData.CriticalDamagePercent(criticalDamageLevel) * 100
         );
+    }
+
+    /// <summary>
+    /// 업그레이드창에서 버튼들을 활성화 여부(중복클릭 방지)
+    /// </summary>
+    /// <param name="active"></param>
+    public void ButtonsSetActive(bool active) {
+        for (int i=0; i < NextStageButtons.Length; i++) {
+            NextStageButtons[i].enabled = active;
+        }
     }
 }
