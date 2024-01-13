@@ -7,8 +7,9 @@ public class Amelia : Enemy
     Collider2D skillCollider;
     SpriteRenderer skillBox;
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         skillObject = transform.Find("Skill").gameObject;
         skillCollider = skillObject.GetComponent<Collider2D>();
         skillBox = skillObject.GetComponent<SpriteRenderer>();
@@ -55,10 +56,12 @@ public class Amelia : Enemy
         // 공격 활성화
         skillCollider.enabled = true;
         skillBox.color = data.colorActive;
+        SkillAudio();
         yield return new WaitForSeconds(1.0f);
 
         // 공격 비활성화
         Init();
+        StopSkillAudio();
 
         base.Skill();
     }

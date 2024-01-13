@@ -109,7 +109,6 @@ public class GameManager : MonoBehaviour
             return;
 
         stage++;
-        gameState = GameState.Playing;
         StartCoroutine(StageCount(time));
     }
 
@@ -120,6 +119,7 @@ public class GameManager : MonoBehaviour
     IEnumerator StageCount(float time)
     {
         yield return new WaitForSeconds(time);
+        gameState = GameState.Playing;
         AudioManager.instance.StopBGM();
         uIManager._nextStageWaitWindow.SetActive(false);
         // 스테이지 표시
@@ -243,6 +243,8 @@ public class GameManager : MonoBehaviour
         uIManager.StageWaitTimeCountSetActive(true);
         uIManager.StageClear();
 
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.ActivityClear);
+        yield return new WaitForSeconds(1.5f);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.BattleEndExclamation);
         yield return new WaitForSeconds(2.5f);
         uIManager.StageWaitTimeCountSetActive(false);

@@ -8,7 +8,19 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected DamageNumbers damageNumber;
     [SerializeField] protected EnemyDatas data;
 
+    AudioSource audioSource;
+    AudioSource voiceSource;
     [SerializeField] protected float hp;
+
+    protected virtual void Awake()
+    {
+        voiceSource = transform.Find("Voice Source").GetComponent<AudioSource>();;
+        voiceSource.volume = GameManager.instance.data.sfxVolume.Get() / 100;
+        voiceSource.clip = data.voiceAuio;
+
+        audioSource = transform.Find("Audio Source").GetComponent<AudioSource>();;
+        audioSource.volume = GameManager.instance.data.sfxVolume.Get() / 100;
+    }
 
     protected virtual void OnEnable()
     {
@@ -36,6 +48,7 @@ public class Enemy : MonoBehaviour
                 StartCoroutine(ChangeState(State.attack, waitTime));
                 break;
             case State.attack:
+                VoiceAudio();
                 Skill();
                 break;
         }
@@ -56,6 +69,22 @@ public class Enemy : MonoBehaviour
         // 스킬 쓰고 난 직후
         // 자식 Skill 스킬 사용 후 마지막에 base.Skill(); 호출
         StartCoroutine(ChangeState(State.idle, 0f));
+    }
+
+    protected void VoiceAudio()
+    {
+        voiceSource.Play();
+    }
+
+    protected void SkillAudio()
+    {
+        audioSource.Stop();
+        audioSource.clip = data.skillAuio;
+        audioSource.Play();
+    }
+    protected void StopSkillAudio()
+    {
+        audioSource.Stop();
     }
 
     void Dead()

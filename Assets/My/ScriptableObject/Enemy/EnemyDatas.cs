@@ -14,12 +14,16 @@ public class EnemyDatas : ScriptableObject
     [SerializeField]
     private float waitTimeAttack;
 
+    [Header("소리")]
+    public AudioClip voiceAuio;
+    public AudioClip skillAuio;
+
     [Header("색")]
     public Color colorActive = new Color32(150, 25, 25, 255);
     public Color colorDeactive = new Color32(255, 255, 255, 255);
 
     public float Hp(int stage) {
-        return baseHp + (stage * levelAdjustedHp);
+        return (baseHp + (stage * levelAdjustedHp)) * Mathf.Pow(1.05f, stage);
     }
 
     public float WaitTimeAttack() {

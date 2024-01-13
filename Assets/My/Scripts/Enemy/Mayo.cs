@@ -7,7 +7,7 @@ public class Mayo : Enemy
     GameObject target;
     int BulletsCount;
 
-    void Awake()
+    protected override void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         target = GameManager.instance.player;
@@ -52,6 +52,7 @@ public class Mayo : Enemy
     {
         for (int i=0; i < BulletsCount; i++) {
             Vector3 vec = transform.position + (target.transform.position - transform.position).normalized * 1;
+            SkillAudio();
             GameObject bullet = GameManager.instance.poolManager.GetBullet(PoolManager.Bullets.MayoBullet, vec);
 
 

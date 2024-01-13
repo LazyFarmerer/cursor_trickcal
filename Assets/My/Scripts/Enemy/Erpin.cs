@@ -6,8 +6,9 @@ public class Erpin : Enemy
     SpriteRenderer spriteRenderer;
     int BulletsCount;
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -50,6 +51,7 @@ public class Erpin : Enemy
     {
         for (int i=0; i < BulletsCount; i++) {
             Vector3 vec = transform.position + Vector3.up;
+            SkillAudio();
             GameObject bullet = GameManager.instance.poolManager.GetBullet(PoolManager.Bullets.ErpinBullet, vec);
 
             yield return new WaitForSeconds(0.2f);

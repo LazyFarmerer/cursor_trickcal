@@ -40,7 +40,8 @@ public class AudioManager : MonoBehaviour
         /// </summary>
         BattleEndExclamation,
         GameStart,
-        buy
+        buy,
+        ActivityClear,
     }
 
 
@@ -95,8 +96,8 @@ public class AudioManager : MonoBehaviour
 
         bgmPlayer.Stop();
         if (bGM == BGM.Battle) {
-            // 배틀 음 3개 index, index+1, index+2
-            index += Random.Range(0, 2+1);
+            // 배틀 음 5개 index, index+1, index+2, index+3, index+4
+            index += Random.Range(0, 4+1);
         }
         bgmPlayer.clip = bgmClips[index];
         bgmPlayer.Play();

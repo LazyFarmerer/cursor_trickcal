@@ -7,7 +7,7 @@ public class Tig : Enemy
     GameObject skillObject;
     SpriteRenderer spriteRenderer;
 
-    void Awake()
+    protected override void Awake()
     {
         skillObject = transform.Find("Skill").gameObject;
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -47,9 +47,11 @@ public class Tig : Enemy
             .OnComplete(
                 () => skillObject.SetActive(false)
             );
+        SkillAudio();
 
         yield return new WaitForSeconds(1.0f);
         Init();
+        StopSkillAudio();
         base.Skill();
     }
 }

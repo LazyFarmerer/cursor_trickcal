@@ -7,7 +7,7 @@ public class Kidion : Enemy
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
 
-    void Awake()
+    protected override void Awake()
     {
         snipeObject = transform.Find("snipe").gameObject;
         rigid = GetComponent<Rigidbody2D>();
@@ -58,9 +58,11 @@ public class Kidion : Enemy
         Vector2 vec = snipeObject.transform.position - transform.position;
         rigid.AddForce(vec.normalized * 10, ForceMode2D.Impulse);
         snipeObject.transform.position = transform.position;
+        SkillAudio();
 
         yield return new WaitForSeconds(1.0f);
         Init();
+        StopSkillAudio();
         TagLayoutChange(false);
         base.Skill();
     }

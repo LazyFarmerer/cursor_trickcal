@@ -5,7 +5,7 @@ public class Juvie : Enemy
 {
     SpriteRenderer spriteRenderer;
 
-    void Awake()
+    protected override void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -38,6 +38,7 @@ public class Juvie : Enemy
         Vector3 target = GameManager.instance.player.transform.position;
         Vector3 vec = transform.position + (target - transform.position).normalized * 1;
         GameObject bullet = GameManager.instance.poolManager.GetBullet(PoolManager.Bullets.JuvieBullet, vec);
+        SkillAudio();
         // 위치 지정
         Init();
         base.Skill();
