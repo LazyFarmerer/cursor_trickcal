@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67e384e9fd7f0a743a8415a170beb6fd, type: 3}
+  m_Name: Sion
+  m_EditorClassIdentifier: 
+  Name: "\uC2DC\uC628"
+  sprite: {fileID: 21300000, guid: 855d73d56ed7f5a4682c8875cab43f70, type: 3}
+  skill: {fileID: 21300000, guid: ca99594a4589e3341920fb60586b5e1e, type: 3}
+  maxHp: 5
+  hp: 2
+  baseDamage: 20
+  levelAdjustedDamage: 5
+  baseCritical: 0.3
+  levelAdjustedCritical: 0.1
+  baseCriticalDamage: 0.7
+  levelAdjustedCriticalDamage: 0.1
+  skillCoolTime: 60
+  description: "\uCCB4\uB825: {0} (\uCD5C\uB300 {1})\n\uB370\uBBF8\uC9C0: {2} (\uB808\uBCA8\uB2F9
+    \uC99D\uAC00\uB7C9: +{3})\n\uCE58\uBA85\uD0C0 \uD655\uB960: {4}% + (\uB808\uBCA8\uB2F9
+    \uC99D\uAC00\uB7C9: +{5}%)\n\uCE58\uBA85\uD0C0 \uB370\uBBF8\uC9C0: {6}% + (\uB808\uBCA8\uB2F9
+    \uC99D\uAC00\uB7C9: +{7}%)\n\n{8}"
+  skillDescription: "\uAC15\uB825\uD55C \uC2A4\uD0AC \uACF5\uACA9\uC744 \uD569\uB2C8\uB2E4"
