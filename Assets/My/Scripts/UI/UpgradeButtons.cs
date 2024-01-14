@@ -63,6 +63,7 @@ public class UpgradeButtons : MonoBehaviour
             case 0:
                 price = Price(hpLevel * 10);
                 if (coin - price < 0) {
+                    AudioManager.instance.PlaySfx(AudioManager.Sfx.ButtonClickFail);
                     return;
                 }
                 coin -= price;
@@ -75,7 +76,7 @@ public class UpgradeButtons : MonoBehaviour
             case 1:
                 price = Price(damageLevel);
                 if (coin - price < 0) {
-                    damageLevel--;
+                    AudioManager.instance.PlaySfx(AudioManager.Sfx.ButtonClickFail);
                     return;
                 }
                 coin -= price;
@@ -88,7 +89,7 @@ public class UpgradeButtons : MonoBehaviour
             case 2:
                 price = Price(criticalChanceLevel);
                 if (coin - price < 0) {
-                    criticalChanceLevel--;
+                    AudioManager.instance.PlaySfx(AudioManager.Sfx.ButtonClickFail);
                     return;
                 }
                 coin -= price;
@@ -101,7 +102,7 @@ public class UpgradeButtons : MonoBehaviour
             case 3:
                 price = Price(criticalDamageLevel);
                 if (coin - price < 0) {
-                    criticalDamageLevel--;
+                    AudioManager.instance.PlaySfx(AudioManager.Sfx.ButtonClickFail);
                     return;
                 }
                 coin -= price;

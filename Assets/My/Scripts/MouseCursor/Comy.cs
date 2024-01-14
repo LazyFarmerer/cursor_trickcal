@@ -7,9 +7,9 @@ public class Comy : MouseCursor
 {
     Sequence skillAnimation;
 
-    protected override void OnEnable()
+    protected override void Awake()
     {
-        base.OnEnable();
+        base.Awake();
 
         skillAnimation = DOTween.Sequence()
             .SetAutoKill(false)

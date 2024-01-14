@@ -57,14 +57,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Hit(float damage, bool isCritical)
+    public bool Hit(float damage, bool isCritical)
     {
         damageNumber.Print(transform.position, damage, isCritical);
         hp -= damage;
 
         if (hp < 0) {
             Dead();
+            return true;
         }
+        return false;
     }
 
     protected virtual void Skill()

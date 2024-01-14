@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1403590385926159630}
   - component: {fileID: 1403590385926159629}
   - component: {fileID: -5479784460890712227}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: JuvieBullet
   m_TagString: EnemySkill
   m_Icon: {fileID: 0}

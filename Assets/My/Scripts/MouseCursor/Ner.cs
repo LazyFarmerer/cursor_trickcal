@@ -8,9 +8,9 @@ public class Ner : MouseCursor
     [SerializeField] ParticleSystem skillVisualizer;
     WaitForSeconds skillDuration = new WaitForSeconds(5.0f);
 
-    protected override void OnEnable()
+    protected override void Awake()
     {
-        base.OnEnable();
+        base.Awake();
 
         skillDamageUp = false;
     }

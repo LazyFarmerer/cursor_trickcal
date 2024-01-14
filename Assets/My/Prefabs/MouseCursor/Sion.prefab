@@ -90,6 +90,7 @@ MonoBehaviour:
   maxSkillCoolTime: 0
   skillCoolTime: 0
   skillEnergyParticle: {fileID: 8006605099621287464}
+  sniperPrefab: {fileID: 1403590385926159625, guid: b4aa6c7d726416342a68b505919544f5, type: 3}
 --- !u!1 &627610436820615135
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +281,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -397,7 +398,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.41006586, g: 0.5721195, b: 0.8962264, a: 1}
+      maxColor: {r: 0.39215687, g: 0.5882353, b: 0.88235295, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

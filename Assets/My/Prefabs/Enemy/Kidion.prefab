@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7076637662811705620}
   - component: {fileID: 9222889107152420036}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: round circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3506433712010949214}
   - component: {fileID: 3594104963276867645}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 877052218811907663}
   - component: {fileID: 644518378757307083}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Voice Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8453325411991990532}
   - component: {fileID: 2041482211811509732}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: snipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 3832827064662044224}
   - component: {fileID: 8386877750951185778}
   - component: {fileID: 7943722551973360774}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Kidion
   m_TagString: Enemy
   m_Icon: {fileID: 0}

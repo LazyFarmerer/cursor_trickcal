@@ -16,10 +16,10 @@ TagManager:
   - UI
   - 
   - Player
+  - PlayerSkill
   - Enemy
   - EnemySkill
   - DeadZone
-  - 
   - 
   - 
   - 

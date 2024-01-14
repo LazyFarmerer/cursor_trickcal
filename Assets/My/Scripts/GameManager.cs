@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
         if (!data.sfxVolume.HasKey()) {
             data.sfxVolume.Save(0.7f);
         }
-
         highScore = data.highScore.Get();
         score = 0;
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5861765120729695594}
   - component: {fileID: 1156843855495292504}
   - component: {fileID: 2348076635446538113}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Erpin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5627679751707279654}
   - component: {fileID: 792086054233347041}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Voice Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3320494621829094396}
   - component: {fileID: 5208958282165197453}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458390587553069630}
   - component: {fileID: 1988211130867308526}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: round circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

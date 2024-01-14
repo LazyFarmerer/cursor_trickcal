@@ -4,7 +4,7 @@ public class DeadZone : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("EnemySkill")) {
+        if (other.CompareTag("EnemySkill") || other.CompareTag("PlayerSkill")) {
             other.gameObject.SetActive(false);
             other.transform.position = Vector2.zero;
         }

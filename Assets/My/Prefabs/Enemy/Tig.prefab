@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5980644956635863441}
   - component: {fileID: 1417305602828188323}
   - component: {fileID: 6532141325809463776}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Tig
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 3900220982435171864}
   - component: {fileID: 930953320362769908}
   - component: {fileID: 2360320767631619843}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Attack 2
   m_TagString: EnemySkill
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1069558345506542315}
   - component: {fileID: 4691322351906623698}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Voice Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1221827703020857028}
   - component: {fileID: 1278686857308027045}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Skill
   m_TagString: EnemySkill
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 8145506060861023682}
   - component: {fileID: 2157052588897288883}
   - component: {fileID: 4650143977851151732}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Attack 1
   m_TagString: EnemySkill
   m_Icon: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 430708920544585413}
   - component: {fileID: 1743213880857824021}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: round circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3077484515534423640}
   - component: {fileID: 5668258066573178662}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}

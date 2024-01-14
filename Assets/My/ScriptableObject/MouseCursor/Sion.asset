@@ -23,7 +23,7 @@ MonoBehaviour:
   levelAdjustedCritical: 0.1
   baseCriticalDamage: 0.7
   levelAdjustedCriticalDamage: 0.1
-  skillCoolTime: 60
+  skillCoolTime: 5
   description: "\uCCB4\uB825: {0} (\uCD5C\uB300 {1})\n\uB370\uBBF8\uC9C0: {2} (\uB808\uBCA8\uB2F9
     \uC99D\uAC00\uB7C9: +{3})\n\uCE58\uBA85\uD0C0 \uD655\uB960: {4}% + (\uB808\uBCA8\uB2F9
     \uC99D\uAC00\uB7C9: +{5}%)\n\uCE58\uBA85\uD0C0 \uB370\uBBF8\uC9C0: {6}% + (\uB808\uBCA8\uB2F9

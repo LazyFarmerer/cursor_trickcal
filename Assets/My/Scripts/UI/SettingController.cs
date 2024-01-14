@@ -44,9 +44,9 @@ public class SettingController : MonoBehaviour
 
         // 볼륨 관련
         bgmSlider.value = GameManager.instance.data.bgmVolume.Get() * 100;
-        BgmVolumeChanged();
+        // BgmVolumeChanged(); // 알아서 작동 함
         sfxSlider.value = GameManager.instance.data.sfxVolume.Get() * 100;
-        SfxVolumeChanged();
+        // SfxVolumeChanged(); // 알아서 작동 함
 
         // 풀 스크린 여부
         fullScreenToggle.isOn = Screen.fullScreenMode.Equals(FullScreenMode.FullScreenWindow)? true : false;

@@ -29,6 +29,7 @@ public class AudioManager : MonoBehaviour
         /// UI 등에 사용해보기
         /// </summary>
         ButtonClick,
+        ButtonClickFail,
         Count,
         CountFinal,
         /// <summary>
@@ -106,6 +107,10 @@ public class AudioManager : MonoBehaviour
     }
     public void StopBGM() => bgmPlayer.Stop();
 
+    /// <summary>
+    /// 어떠한 입력 없으면 버튼클릭 음
+    /// </summary>
+    public void PlaySfx() => PlaySfx(Sfx.ButtonClick);
     public void PlaySfx(Sfx sfx)
     {
         for (int index=0; index < sfxPlayers.Length; index++) {

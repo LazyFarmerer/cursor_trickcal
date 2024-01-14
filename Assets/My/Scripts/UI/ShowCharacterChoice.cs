@@ -17,6 +17,9 @@ public class ShowCharacterChoice : MonoBehaviour
             int i = index;
             Transform character = Instantiate(characterWindow, transform).transform;
             character.GetComponent<Button>().onClick.AddListener(() =>
+                AudioManager.instance.PlaySfx(AudioManager.Sfx.ButtonClick)
+            );
+            character.GetComponent<Button>().onClick.AddListener(() =>
                 GameManager.instance.StartGame(i)
             );
             character.GetComponent<Button>().onClick.AddListener(() =>

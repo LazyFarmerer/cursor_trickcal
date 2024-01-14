@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8391839223000916279}
   - component: {fileID: 4043338692566933597}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 4620696645692748737}
   - component: {fileID: 4620696645692748736}
   - component: {fileID: 4620696645692748743}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Skill
   m_TagString: EnemySkill
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2936358372961831390}
   - component: {fileID: 4216756800227307746}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Voice Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 8702185834986271083}
   - component: {fileID: 8702185834986271082}
   - component: {fileID: 8702185834986271086}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Amelia
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -542,7 +542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8702185835589630813}
   - component: {fileID: 8702185835589630814}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: round circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

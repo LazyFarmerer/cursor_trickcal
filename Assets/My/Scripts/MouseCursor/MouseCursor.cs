@@ -29,7 +29,7 @@ public class MouseCursor : MonoBehaviour
         Transform childObject = transform.Find("Character Image");
         characterImage = childObject.GetComponent<SpriteRenderer>();
 
-        hitFxObject = GameManager.instance.player.transform.parent.Find("Hit Effect").gameObject;
+        hitFxObject = transform.parent.parent.Find("Hit Effect").gameObject;
         hitFx = hitFxObject.GetComponent<ParticleSystem>();
 
         isHit = false;
@@ -38,6 +38,8 @@ public class MouseCursor : MonoBehaviour
 
         maxSkillCoolTime = mouseCursorData.skillCoolTime;
         skillCoolTime = 0;
+
+        GameManager.instance.uIManager.HpBar(hp, maxHp);
     }
 
     void Update()
@@ -67,11 +69,6 @@ public class MouseCursor : MonoBehaviour
         }
 
         GameManager.instance.SlowMotionEndOverTime();
-    }
-
-    protected virtual void OnEnable()
-    {
-        GameManager.instance.uIManager.HpBar(hp, maxHp);
     }
 
     void OnDisable()
