@@ -16,5 +16,7 @@ MonoBehaviour:
   baseHp: 150
   levelAdjustedHp: 30
   waitTimeAttack: 1
+  voiceAuio: {fileID: 8300000, guid: e314cac9ba6fff44e94e04df0e6a5318, type: 3}
+  skillAuio: {fileID: 8300000, guid: e2929a11c5b75ca4e84f5c30c9d0e46a, type: 3}
   colorActive: {r: 0.5882353, g: 0.09803922, b: 0.09803922, a: 1}
   colorDeactive: {r: 0.5882353, g: 0.09803922, b: 0.09803922, a: 0.39215687}

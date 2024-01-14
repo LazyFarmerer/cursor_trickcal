@@ -8,18 +8,21 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected DamageNumbers damageNumber;
     [SerializeField] protected EnemyDatas data;
 
-    AudioSource audioSource;
     AudioSource voiceSource;
+    AudioSource audioSource;
     [SerializeField] protected float hp;
 
     protected virtual void Awake()
     {
         voiceSource = transform.Find("Voice Source").GetComponent<AudioSource>();;
-        voiceSource.volume = GameManager.instance.data.sfxVolume.Get() / 100;
-        voiceSource.clip = data.voiceAuio;
+        voiceSource.volume = GameManager.instance.data.sfxVolume.Get();
+        if (data.voiceAuio != null)
+            voiceSource.clip = data.voiceAuio;
 
         audioSource = transform.Find("Audio Source").GetComponent<AudioSource>();;
-        audioSource.volume = GameManager.instance.data.sfxVolume.Get() / 100;
+        audioSource.volume = GameManager.instance.data.sfxVolume.Get();
+        if (data.skillAuio != null)
+            audioSource.clip = data.skillAuio;
     }
 
     protected virtual void OnEnable()
@@ -73,13 +76,18 @@ public class Enemy : MonoBehaviour
 
     protected void VoiceAudio()
     {
+        if (voiceSource.clip == null)
+            return;
+
         voiceSource.Play();
     }
 
     protected void SkillAudio()
     {
+        if (audioSource.clip == null)
+            return;
+
         audioSource.Stop();
-        audioSource.clip = data.skillAuio;
         audioSource.Play();
     }
     protected void StopSkillAudio()

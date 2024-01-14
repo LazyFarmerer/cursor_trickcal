@@ -3721,6 +3721,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1685413839}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ScoreUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1685413839}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: NextStage
         m_Mode: 4
         m_Arguments:
@@ -28344,7 +28356,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -29539,6 +29551,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8186a96e4d2c6dd49a420858ca87ef80, type: 3}
   - {fileID: 8300000, guid: 4d3bf4551017f0a489503249d1365d4e, type: 3}
   - {fileID: 8300000, guid: fbb70322012510d4f852db844a9a432a, type: 3}
+  - {fileID: 8300000, guid: 4e50b975965373841bc2e9d0abc2792a, type: 3}
+  - {fileID: 8300000, guid: aeb80ae4f5c71214da13ad033e5f1771, type: 3}
   sfxClips:
   - {fileID: 8300000, guid: 4f3cf3099ee4f3a4697c9354915874da, type: 3}
   - {fileID: 8300000, guid: 73753ea662725de47acb555be776166e, type: 3}
@@ -29547,6 +29561,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 75195d4bb0712a44cb662038de42323f, type: 3}
   - {fileID: 8300000, guid: a59a4bb348eab3f4aa3a0877125e8d93, type: 3}
   - {fileID: 8300000, guid: 4539969ecb587fb458b457db7a52d52a, type: 3}
+  - {fileID: 8300000, guid: be11bb336b485044a92f4d98c41079e7, type: 3}
+  - {fileID: 8300000, guid: 509238621ac8fea4984a664750d2aa5a, type: 3}
+  - {fileID: 8300000, guid: 5faaf874bbbff3246b7ab8266f9a0634, type: 3}
 --- !u!1 &2124179465
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class Tig : Enemy
 
     protected override void Awake()
     {
+        base.Awake();
         skillObject = transform.Find("Skill").gameObject;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }

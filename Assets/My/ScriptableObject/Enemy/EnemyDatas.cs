@@ -23,6 +23,7 @@ public class EnemyDatas : ScriptableObject
     public Color colorDeactive = new Color32(255, 255, 255, 255);
 
     public float Hp(int stage) {
+        stage--;
         return (baseHp + (stage * levelAdjustedHp)) * Mathf.Pow(1.05f, stage);
     }
 

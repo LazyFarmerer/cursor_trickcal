@@ -86,8 +86,10 @@ public class MouseCursor : MonoBehaviour
             bool isCritical = CriticalChance() <= Random.Range(0, 1.0f);
             float damage = isCritical? Damage(): CriticalDamage();
 
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.EnemyHit);
             other.GetComponent<Enemy>().Hit(damage, isCritical);
         } else if (other.CompareTag("EnemySkill") && !isHit) {
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.MouseHit);
             Hit();
         }
     }

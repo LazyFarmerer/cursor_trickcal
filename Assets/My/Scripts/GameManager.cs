@@ -325,4 +325,13 @@ public class GameManager : MonoBehaviour
         AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
         player.transform.GetChild(0).GetComponent<MouseCursor>().Heal(0, maxHp);
     }
+    public void ScoreUp()
+    {
+        if (gameState == GameState.Playing)
+            return;
+
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
+        score += 50;
+        uIManager.ScoreCount(score);
+    }
 }

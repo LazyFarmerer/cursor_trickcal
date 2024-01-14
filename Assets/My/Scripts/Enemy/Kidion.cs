@@ -9,6 +9,7 @@ public class Kidion : Enemy
 
     protected override void Awake()
     {
+        base.Awake();
         snipeObject = transform.Find("snipe").gameObject;
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();

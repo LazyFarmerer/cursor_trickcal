@@ -7,6 +7,7 @@ public class Juvie : Enemy
 
     protected override void Awake()
     {
+        base.Awake();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 

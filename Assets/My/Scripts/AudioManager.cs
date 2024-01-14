@@ -42,6 +42,8 @@ public class AudioManager : MonoBehaviour
         GameStart,
         buy,
         ActivityClear,
+        MouseHit,
+        EnemyHit
     }
 
 
