@@ -68,4 +68,7 @@ public class DataController
     // 볼륨
     public Data<float> bgmVolume = new Data<float>("bgmVolume");
     public Data<float> sfxVolume = new Data<float>("sfxVolume");
+
+    // 캐릭터
+    public Data<int> sion = new Data<int>("sion");
 }

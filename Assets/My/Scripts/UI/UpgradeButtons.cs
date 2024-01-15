@@ -51,7 +51,7 @@ public class UpgradeButtons : MonoBehaviour
 
     int Price(int level)
     {
-        float result = 100 * Mathf.Pow(1.15f, level);
+        float result = 100 * Mathf.Pow(1.2f, level);
         return (int)result;
     }
 
@@ -61,7 +61,7 @@ public class UpgradeButtons : MonoBehaviour
         switch (index)
         {
             case 0:
-                price = Price(hpLevel * 10);
+                price = Price(hpLevel * 5);
                 if (coin - price < 0) {
                     AudioManager.instance.PlaySfx(AudioManager.Sfx.ButtonClickFail);
                     return;
