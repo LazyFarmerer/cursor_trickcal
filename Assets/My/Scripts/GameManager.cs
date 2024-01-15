@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public enum GameState
     {
         WindowOpen, // 게임 내 창 띄어져 있음 (타이틀 등)
+        Ready,
         Playing, // 게임중
         Paused // 게임 일시정지 상태
     }
@@ -104,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void NextStage(float time)
     {
-        if (gameState == GameState.Playing)
+        if (gameState == GameState.Ready)
             return;
 
         stage++;
@@ -117,6 +118,7 @@ public class GameManager : MonoBehaviour
     /// <returns></returns>
     IEnumerator StageCount(float time)
     {
+        gameState = GameState.Ready;
         yield return new WaitForSeconds(time);
         gameState = GameState.Playing;
         AudioManager.instance.StopBGM();
@@ -162,6 +164,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        GameOver();
         DOTween.KillAll();
         SlowMotionStart(1.0f);
         SceneManager.LoadScene(0);
@@ -225,6 +228,8 @@ public class GameManager : MonoBehaviour
             for (int i=0; i < enemyBulletsCount; i++) {
                 poolManager.transform.GetChild(1).GetChild(i).gameObject.SetActive(false);
             }
+            // 시간 되돌리기
+            SlowMotionStart(1);
             // 클리어 표시
             StartCoroutine(StageClear());
         }
@@ -280,7 +285,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void DamageLevelUp()
     {
-        if (gameState == GameState.Playing)
+        if (gameState == GameState.Ready)
             return;
 
         AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
@@ -291,7 +296,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void CriticalChanceLevelUp()
     {
-        if (gameState == GameState.Playing)
+        if (gameState == GameState.Ready)
             return;
 
         AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
@@ -302,7 +307,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void CriticalDamageLevelUp()
     {
-        if (gameState == GameState.Playing)
+        if (gameState == GameState.Ready)
             return;
 
         AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
@@ -310,7 +315,7 @@ public class GameManager : MonoBehaviour
     }
     public void HpUp(int hp)
     {
-        if (gameState == GameState.Playing)
+        if (gameState == GameState.Ready)
             return;
 
         AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
@@ -318,7 +323,7 @@ public class GameManager : MonoBehaviour
     }
     public void MaxHpUp(int maxHp)
     {
-        if (gameState == GameState.Playing)
+        if (gameState == GameState.Ready)
             return;
 
         AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
@@ -326,7 +331,7 @@ public class GameManager : MonoBehaviour
     }
     public void ScoreUp()
     {
-        if (gameState == GameState.Playing)
+        if (gameState == GameState.Ready)
             return;
 
         AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);

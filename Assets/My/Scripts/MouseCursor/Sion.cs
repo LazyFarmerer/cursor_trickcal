@@ -28,7 +28,10 @@ public class Sion : MouseCursor
     /// <summary>
     /// 스킬 다시 사용
     /// </summary>
-    public void ReloadSkill() => StartCoroutine(SkillCoroutine());
+    public void ReloadSkill() {
+        VoiceAudio();
+        StartCoroutine(SkillCoroutine());
+    }
     protected override void Skill()
     {
         base.Skill();
@@ -41,6 +44,7 @@ public class Sion : MouseCursor
     IEnumerator SkillCoroutine()
     {
         skillEnergyParticle.Play();
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.GunReload);
         yield return skillParticleDuration;
         skillEnergyParticle.Stop();
         yield return skillDuration;

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Erpin
   m_EditorClassIdentifier: 
   enemyName: "\uC5D0\uB974\uD540"
-  baseHp: 120
-  levelAdjustedHp: 20
+  baseHp: 160
+  levelAdjustedHp: 30
   waitTimeAttack: 4.5
   voiceAuio: {fileID: 8300000, guid: 506495a0e9182be469b679545a11b25c, type: 3}
   skillAuio: {fileID: 8300000, guid: 4d0196dd17781264ea1f1335a5193f71, type: 3}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Amelia
   m_EditorClassIdentifier: 
   enemyName: "\uC544\uBA5C\uB9AC\uC544"
-  baseHp: 150
-  levelAdjustedHp: 30
+  baseHp: 200
+  levelAdjustedHp: 35
   waitTimeAttack: 1
   voiceAuio: {fileID: 8300000, guid: e314cac9ba6fff44e94e04df0e6a5318, type: 3}
   skillAuio: {fileID: 8300000, guid: e2929a11c5b75ca4e84f5c30c9d0e46a, type: 3}

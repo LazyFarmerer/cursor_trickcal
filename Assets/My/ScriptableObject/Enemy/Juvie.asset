@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Juvie
   m_EditorClassIdentifier: 
   enemyName: "\uC96C\uBE44"
-  baseHp: 70
+  baseHp: 100
   levelAdjustedHp: 30
   waitTimeAttack: 3.5
   voiceAuio: {fileID: 8300000, guid: b7e3e948394c86043b6350a85969b879, type: 3}

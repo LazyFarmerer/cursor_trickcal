@@ -22,7 +22,8 @@ public class AudioManager : MonoBehaviour
         MainTitle,
         Bakery,
         GetChuCrayon,
-        Battle
+        Battle,
+        GameOver=8
     }
     public enum Sfx {
         /// <summary>
@@ -41,10 +42,13 @@ public class AudioManager : MonoBehaviour
         /// </summary>
         BattleEndExclamation,
         GameStart,
+        PlayerDead,
         buy,
         ActivityClear,
         MouseHit,
-        EnemyHit
+        EnemyHit,
+        GunReload,
+        Explosion
     }
 
 

@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: "\uCF54\uBBF8"
   sprite: {fileID: 21300000, guid: 4d43e943f75bf7e4daec29c4bde9e0c2, type: 3}
   skill: {fileID: 21300000, guid: 2a95bf48a44510645a3535088c00a09d, type: 3}
+  voiceAudio: {fileID: 8300000, guid: d48ae13a3cc20c34e827e455b5c5e928, type: 3}
   maxHp: 10
   hp: 3
   baseDamage: 10

@@ -12,6 +12,8 @@ public class MouseCursor : MonoBehaviour
     GameObject hitFxObject;
     ParticleSystem hitFx;
 
+    AudioSource voiceSource;
+
 
     [Header("각종 게임 변수")]
     protected bool isHit;
@@ -31,6 +33,10 @@ public class MouseCursor : MonoBehaviour
 
         hitFxObject = transform.parent.parent.Find("Hit Effect").gameObject;
         hitFx = hitFxObject.GetComponent<ParticleSystem>();
+
+        voiceSource = transform.Find("Voice Source").GetComponent<AudioSource>();
+        voiceSource.volume = GameManager.instance.data.sfxVolume.Get() * 1.2f; // 목소리가 작아서 조금 키움
+        voiceSource.clip = mouseCursorData.voiceAudio;
 
         isHit = false;
         maxHp = mouseCursorData.Hp();
@@ -93,6 +99,7 @@ public class MouseCursor : MonoBehaviour
 
     protected virtual void Skill()
     {
+        VoiceAudio();
         skillCoolTime = mouseCursorData.skillCoolTime;
     }
 
@@ -113,6 +120,11 @@ public class MouseCursor : MonoBehaviour
         int damageLevel = GameManager.instance.damageLevel;
         int criticalDamageLevel = GameManager.instance.criticalDamageLevel;
         return mouseCursorData.CriticalDamage(damageLevel, criticalDamageLevel);
+    }
+
+    protected void VoiceAudio()
+    {
+        voiceSource.Play();
     }
 
     /// <summary>
@@ -143,6 +155,8 @@ public class MouseCursor : MonoBehaviour
         if (hp == 0) {
             // 게임 오버
             GameManager.instance.GameOver();
+            AudioManager.instance.StopBGM();
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.PlayerDead);
             DeadAnimation();
         }
     }
@@ -192,7 +206,10 @@ public class MouseCursor : MonoBehaviour
             characterImage.DOMoveY(-10, 2.0f)
                 .SetEase(Ease.InBack)
                 .SetRelative()
-                .OnComplete(() => GameManager.instance.uIManager.GameOver())
+                .OnComplete(() => {
+                    GameManager.instance.uIManager.GameOver();
+                    AudioManager.instance.PlayBGM(AudioManager.BGM.GameOver);
+                })
         );
     }
 }

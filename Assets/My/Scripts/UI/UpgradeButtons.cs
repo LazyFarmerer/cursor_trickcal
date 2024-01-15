@@ -51,7 +51,7 @@ public class UpgradeButtons : MonoBehaviour
 
     int Price(int level)
     {
-        float result = 100 * Mathf.Pow(1.05f, level);
+        float result = 100 * Mathf.Pow(1.15f, level);
         return (int)result;
     }
 

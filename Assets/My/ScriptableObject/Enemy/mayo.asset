@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: mayo
   m_EditorClassIdentifier: 
   enemyName: "\uB9C8\uC694"
-  baseHp: 100
-  levelAdjustedHp: 10
+  baseHp: 130
+  levelAdjustedHp: 20
   waitTimeAttack: 1.5
   voiceAuio: {fileID: 8300000, guid: 3d9a14de4b2bb9b47a5c6c8c297c13af, type: 3}
   skillAuio: {fileID: 8300000, guid: 1aebea0f28ee36f4ebda8fafe9c1b330, type: 3}

@@ -8,6 +8,8 @@ public class MouseCursorDatas : ScriptableObject
     [Header("이미지")]
     public Sprite sprite;
     public Sprite skill;
+    [Header("보이스")]
+    public AudioClip voiceAudio;
     [Header("정보")]
     public int maxHp;
     [SerializeField] int hp;

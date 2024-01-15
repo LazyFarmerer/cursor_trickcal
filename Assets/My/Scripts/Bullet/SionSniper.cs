@@ -68,7 +68,6 @@ public class SionSniper : MonoBehaviour
                 isReload = false;
                 if (0 < reload)
                     sion.ReloadSkill();
-                print(reload);
                 reload--; // 2->1 , 1->0
             }
         }
@@ -79,6 +78,7 @@ public class SionSniper : MonoBehaviour
         rigid.velocity = Vector2.zero;
         sprite.color = colorDeactive;
         anim.SetTrigger("explosion");
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Explosion);
 
         StopAllCoroutines();
         StartCoroutine(GameObjectDeactive());

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Kidion
   m_EditorClassIdentifier: 
   enemyName: "\uD0A4\uB514\uC5B8"
-  baseHp: 250
-  levelAdjustedHp: 40
+  baseHp: 300
+  levelAdjustedHp: 50
   waitTimeAttack: 5
   voiceAuio: {fileID: 8300000, guid: b924265bb4a3d564b92f7da01a31401e, type: 3}
   skillAuio: {fileID: 0}

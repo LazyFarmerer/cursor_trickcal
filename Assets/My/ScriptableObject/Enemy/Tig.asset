@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tig
   m_EditorClassIdentifier: 
   enemyName: "\uD2F0\uADF8"
-  baseHp: 150
+  baseHp: 350
   levelAdjustedHp: 30
   waitTimeAttack: 1.5
   voiceAuio: {fileID: 8300000, guid: 7f1e6eb21d823734e885942c80594e6a, type: 3}

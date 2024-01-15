@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: "\uB124\uB974"
   sprite: {fileID: 21300000, guid: 193eaef7dc37e31418529f99eb04a635, type: 3}
   skill: {fileID: 21300000, guid: f1e5ea8c18ddf2141883fa157db19ce1, type: 3}
+  voiceAudio: {fileID: 8300000, guid: d5d4a2fc82e0c3144809880e033fb6d8, type: 3}
   maxHp: 7
   hp: 3
   baseDamage: 10
@@ -28,5 +29,4 @@ MonoBehaviour:
     \uC99D\uAC00\uB7C9: +{3})\n\uCE58\uBA85\uD0C0 \uD655\uB960: {4}% + (\uB808\uBCA8\uB2F9
     \uC99D\uAC00\uB7C9: +{5}%)\n\uCE58\uBA85\uD0C0 \uB370\uBBF8\uC9C0: {6}% + (\uB808\uBCA8\uB2F9
     \uC99D\uAC00\uB7C9: +{7}%)\n\n{8}"
-  skillDescription: "\uC2A4\uD0AC\uC0AC\uC6A9\uC2DC 5\uCD08\uAC04 \uB370\uBBF8\uC9C0\uC640
-    \uCE58\uBA85\uD0C0\uB370\uC774\uBBF8\uAC00 \uC99D\uAC00\uD569\uB2C8\uB2E4"
+  skillDescription: "\uB204\uAD70\uAC00\uC5D0 \uC758\uD574 \uBD84\uB178\uC5D0 \uD729\uC2F8\uC785\uB2C8\uB2E4"

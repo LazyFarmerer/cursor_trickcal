@@ -14,12 +14,12 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Awake()
     {
-        voiceSource = transform.Find("Voice Source").GetComponent<AudioSource>();;
+        voiceSource = transform.Find("Voice Source").GetComponent<AudioSource>();
         voiceSource.volume = GameManager.instance.data.sfxVolume.Get();
         if (data.voiceAuio != null)
             voiceSource.clip = data.voiceAuio;
 
-        audioSource = transform.Find("Audio Source").GetComponent<AudioSource>();;
+        audioSource = transform.Find("Audio Source").GetComponent<AudioSource>();
         audioSource.volume = GameManager.instance.data.sfxVolume.Get();
         if (data.skillAuio != null)
             audioSource.clip = data.skillAuio;
