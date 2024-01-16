@@ -50,7 +50,7 @@ public class Sion : MouseCursor
         yield return skillDuration;
         // 여기서 스킬 발사하면 될거 같음
         // 활성화만 하고 나머진 알아서 추적 할거임
-        float skillDamage = CriticalDamage() * 3;
+        float skillDamage = CriticalDamage() * 10;
         sniper.transform.position = transform.position;
         sionSniper.damage = skillDamage;
         sniper.SetActive(true);

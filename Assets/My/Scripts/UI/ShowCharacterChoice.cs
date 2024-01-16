@@ -99,6 +99,7 @@ public class ShowCharacterChoice : MonoBehaviour
             GameManager.instance.data.sion.Save(1);
             Destroy(character.gameObject);
             CreateWindow(index, mouseCursorData).SetSiblingIndex(index);
+            CharacterStatus(index, mouseCursorData);
             AudioManager.instance.PlaySfx(AudioManager.Sfx.buy);
         });
         Image spriteImage = character.GetChild(0).GetComponent<Image>();

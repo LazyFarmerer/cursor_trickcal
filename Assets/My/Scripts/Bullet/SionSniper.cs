@@ -6,10 +6,12 @@ public class SionSniper : MonoBehaviour
 {
     public Sion sion;
     SpriteRenderer sprite;
-    GameObject AnimationObject;
     GameObject colliderObject;
-    Animator anim;
     Rigidbody2D rigid;
+    // 끝까지 남아서 있을 파티클
+    [SerializeField] GameObject effectObjectPrefab;
+    GameObject effectObject;
+    ParticleSystem effectParticle;
 
     // 스캔 관련 변수
     Scanner scanner;
@@ -30,10 +32,10 @@ public class SionSniper : MonoBehaviour
     void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
-        AnimationObject = transform.Find("Explosion").gameObject;
         colliderObject = transform.Find("Collider").gameObject;
-        anim = AnimationObject.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
+        effectObject = Instantiate(effectObjectPrefab);
+        effectParticle = effectObject.GetComponent<ParticleSystem>();
 
         scanner = GetComponent<Scanner>();
         reload = 2;
@@ -77,11 +79,17 @@ public class SionSniper : MonoBehaviour
     {
         rigid.velocity = Vector2.zero;
         sprite.color = colorDeactive;
-        anim.SetTrigger("explosion");
+        PlayEffect();
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Explosion);
 
         StopAllCoroutines();
         StartCoroutine(GameObjectDeactive());
+    }
+
+    void PlayEffect()
+    {
+        effectObject.transform.position = transform.position;
+        effectParticle.Play();
     }
 
     /// <summary>
