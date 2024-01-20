@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     [Header("게임 조작을 위한 스크립트")]
     // 저장 데이터들
     public DataController data = new DataController();
+    [SerializeField] GameObject _poolManager;
     public PoolManager poolManager;
     [SerializeField]
     EnemySpawner enemySpawner;
@@ -50,12 +51,6 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
 
-        poolManager = GameObject.Find("Pool Manager").GetComponent<PoolManager>();
-        enemySpawner = GameObject.Find("Enemy Spawner").GetComponent<EnemySpawner>();
-        uIManager = GameObject.Find("UI Manager").GetComponent<UIManager>();
-        uIEvent = GameObject.Find("UI Manager").GetComponent<UIEvent>();
-        player = GameObject.Find("MouseCursor").gameObject;
-
         // 저장된 데이터 가져오기
         if (!data.bgmVolume.HasKey()) {
             data.bgmVolume.Save(0.7f);
@@ -67,6 +62,11 @@ public class GameManager : MonoBehaviour
         score = 0;
 
         Init();
+    }
+
+    void OnApplicationQuit()
+    {
+        GameOver();
     }
 
     void Init()
@@ -223,6 +223,19 @@ public class GameManager : MonoBehaviour
 
         // 만약 적을 다 없앴다면
         if (enemyCount == 0) {
+            // 적 다시 체크하기 (오류 방지)
+            int activeChildCount = -1;
+            Transform poolEnemys = _poolManager.transform.GetChild(0);
+            for (int i=0; i < poolEnemys.childCount; i++) {
+                if (poolEnemys.GetChild(i).gameObject.activeSelf) {
+                    activeChildCount++;
+                }
+            }
+            // Debug.Log($"체크 완료 {activeChildCount}");
+            if (activeChildCount != 0) {
+                enemyCount = activeChildCount;
+                return;
+            }
             // 적 미사일 모두 제거
             int enemyBulletsCount = poolManager.transform.GetChild(1).childCount;
             for (int i=0; i < enemyBulletsCount; i++) {
@@ -263,7 +276,7 @@ public class GameManager : MonoBehaviour
     /// 시간비율을 조절하는 함수 (0.0f ~ 1.0f)
     /// </summary>
     /// <param name="timeScale">0.0f ~ 1.0f</param>
-    public void SlowMotionStart(float timeScale=0.0f)
+    public void SlowMotionStart(float timeScale=0.01f)
     {
         Time.timeScale = timeScale;
         Time.fixedDeltaTime = Time.timeScale * 0.02f;

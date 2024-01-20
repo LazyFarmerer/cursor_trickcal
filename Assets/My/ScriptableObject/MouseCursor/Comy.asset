@@ -18,9 +18,9 @@ MonoBehaviour:
   voiceAudio: {fileID: 8300000, guid: d48ae13a3cc20c34e827e455b5c5e928, type: 3}
   maxHp: 10
   hp: 3
-  baseDamage: 10
-  levelAdjustedDamage: 3
-  baseCritical: 0.2
+  baseDamage: 7
+  levelAdjustedDamage: 2
+  baseCritical: 0.15
   levelAdjustedCritical: 0.02
   baseCriticalDamage: 0.5
   levelAdjustedCriticalDamage: 0.1
@@ -29,5 +29,5 @@ MonoBehaviour:
     \uC99D\uAC00\uB7C9: +{3})\n\uCE58\uBA85\uD0C0 \uD655\uB960: {4}% + (\uB808\uBCA8\uB2F9
     \uC99D\uAC00\uB7C9: +{5}%)\n\uCE58\uBA85\uD0C0 \uB370\uBBF8\uC9C0: {6}% + (\uB808\uBCA8\uB2F9
     \uC99D\uAC00\uB7C9: +{7}%)\n\n{8}"
-  skillDescription: "\uC2A4\uD0AC \uC0AC\uC6A9\uC2DC \uCF54\uBBF8\uB294 4\uCD08\uAC04
+  skillDescription: "\uC5D8\uD504\uC0B0 \uD2B9\uC81C \uC0AC\uB8CC\uB85C \uCF54\uBBF8\uB294
     \uCEE4\uC9D1\uB2C8\uB2E4 \uC58D!\uC58D!\uC58D!"
